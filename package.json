@@ -1,0 +1,21 @@
+{
+  "name": "YHImagePicker",
+  "version": "0.0.1",
+  "description": "这是一个图片选择器",
+  "cordova": {
+    "id": "com.yhload.YHImagePicker",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "--"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "wiley",
+  "license": "ISC"
+}
