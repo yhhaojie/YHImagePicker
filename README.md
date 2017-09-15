@@ -1,14 +1,13 @@
+## 安装
 
-##安装
+##### 添加插件
 
-#####添加插件
 在工程主文件夹执行`cordova plugin add https://github.com/yhhaojie/YHImagePicker.git --save`
 
-#####卸载插件
+##### 卸载插件
 在工程主文件夹执行 `cordova plugin rm com.yhload.WKWebViewPlugin`
 
-##使用
-
+## 使用
 
 1. TS文件中声明`declare let cordova: any`；
 
@@ -25,12 +24,11 @@ cordova.plugins.YHImagePicker.openPhotoLibrary(retDic, (successRet) => {
 }, (errorRet) => { });
 
 ```
-
-#####传入参数（json）
+##### 传入参数（json）
 
 `uuid` 图片的唯一标识，可为空
 
-#####传出参数（json）
+##### 传出参数（json）
 
 `imgPath` 选择图片的地址
 
