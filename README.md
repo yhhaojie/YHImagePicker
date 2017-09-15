@@ -2,14 +2,20 @@
 
 ##### 添加插件
 
-在工程主文件夹执行`cordova plugin add https://github.com/yhhaojie/YHImagePicker.git --save`
+在工程主文件夹执行
+
+`cordova plugin add https://github.com/yhhaojie/YHImagePicker.git --save`
 
 ##### 卸载插件
-在工程主文件夹执行 `cordova plugin rm com.yhload.WKWebViewPlugin`
+在工程主文件夹执行
+
+`cordova plugin rm com.yhload.WKWebViewPlugin`
 
 ## 使用
 
-1. TS文件中声明`declare let cordova: any`；
+1. TS文件中声明
+
+`declare let cordova: any;`
 
 2. 在需要使用插件的地方引入如下代码
 
@@ -38,9 +44,13 @@ cordova.plugins.YHImagePicker.openPhotoLibrary(retDic, (successRet) => {
 
 如果页面没有刷新，可添加如下代码
 
-1. 引入 `import { ChangeDetectorRef } from '@angular/core';`
+1. 引入
 
-2. 让 Angualr 注入变量 `constructor(private cd: ChangeDetectorRef) {}`
+`import { ChangeDetectorRef } from '@angular/core';`
+
+2. 让 Angualr 注入变量
+
+`constructor(private cd: ChangeDetectorRef) {}`
 
 3. 在需要刷新的地方执行
 
