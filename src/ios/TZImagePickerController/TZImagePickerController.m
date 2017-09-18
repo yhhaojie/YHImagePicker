@@ -44,7 +44,7 @@
     self.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationBar.translucent = YES;
     [TZImageManager manager].shouldFixOrientation = NO;
-
+    
     // Default appearance, you can reset these after this method
     // 默认的外观，你可以在这个方法后重置
     self.oKButtonTitleColorNormal   = [UIColor colorWithRed:(233/255.0) green:(59/255.0) blue:(58/255.0) alpha:1.0];
@@ -55,7 +55,7 @@
         self.navigationBar.tintColor = [UIColor whiteColor];
         self.automaticallyAdjustsScrollViewInsets = NO;
         if (!TZ_isGlobalHideStatusBar) [UIApplication sharedApplication].statusBarHidden = NO;
-    }    
+    }
 }
 
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
@@ -174,8 +174,10 @@
                 [_settingBtn addTarget:self action:@selector(settingBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.view addSubview:_settingBtn];
             }
-            
-            _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
+            });
+            // _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
         } else {
             [self pushPhotoPickerVc];
         }
@@ -532,7 +534,7 @@
     
     _HUDContainer.frame = CGRectMake((self.view.tz_width - 120) / 2, (self.view.tz_height - 90) / 2, 120, 90);
     _HUDIndicatorView.frame = CGRectMake(45, 15, 30, 30);
-    _HUDLabel.frame = CGRectMake(0,40, 120, 50);    
+    _HUDLabel.frame = CGRectMake(0,40, 120, 50);
 }
 
 #pragma mark - Public
