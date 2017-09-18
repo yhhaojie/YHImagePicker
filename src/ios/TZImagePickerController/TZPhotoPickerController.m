@@ -482,6 +482,7 @@ static CGFloat itemMargin = 5;
                 }
             }
             [weakSelf refreshBottomToolBarStatus];
+            _tempIndexRow = -1;
         } else {
             
 #warning update
