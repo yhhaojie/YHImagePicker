@@ -21,7 +21,7 @@
 
 ```javascript
 var retDic = {
-	uuid: this.imgUuid
+	imgUuid: this.imgUuid
 }
 cordova.plugins.YHImagePicker.openPhotoLibrary(retDic, (successRet) => {
 	this.imgPath = successRet.imgPath;
