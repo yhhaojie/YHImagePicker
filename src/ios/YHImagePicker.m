@@ -20,16 +20,15 @@
 #pragma mark - cordova 入口
 
 - (void)openPhotoLibrary:(CDVInvokedUrlCommand*)command {
-    
     self.callbackId = command.callbackId;
     [self.commandDelegate runInBackground:^{
-        // 获取参数
-        NSDictionary *dict  = [command argumentAtIndex:0 withDefault:nil];
-        if (dict) {
-            self.imageUuid = dict[@"imgUuid"];
-        }
-        [self imagePickerController];
     }];
+    // 获取参数
+    NSDictionary *dict  = [command argumentAtIndex:0 withDefault:nil];
+    if (dict) {
+        self.imageUuid = dict[@"imgUuid"];
+    }
+    [self imagePickerController];
 }
 
 #pragma mark - cordova 出口
