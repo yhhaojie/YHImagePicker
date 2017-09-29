@@ -9,7 +9,7 @@
 ##### 卸载插件
 在工程主文件夹执行
 
-`cordova plugin rm com.yhload.WKWebViewPlugin`
+`cordova plugin rm com.yhload.YHImagePicker`
 
 ## 使用
 
