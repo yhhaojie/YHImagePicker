@@ -42,7 +42,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationBar.translucent = YES;
+    self.navigationBar.translucent = NO;
     [TZImageManager manager].shouldFixOrientation = NO;
     
     // Default appearance, you can reset these after this method
@@ -174,10 +174,12 @@
                 [_settingBtn addTarget:self action:@selector(settingBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.view addSubview:_settingBtn];
             }
+            /*
             dispatch_sync(dispatch_get_main_queue(), ^{
                 _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
             });
-            // _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
+            */
+            _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
         } else {
             [self pushPhotoPickerVc];
         }
